@@ -1,0 +1,15 @@
+.main-heading{
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 2px;
+    color: blue;
+}
+
+.sub-heading{
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: 2px;
+    color: green;
+}
