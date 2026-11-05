@@ -266,4 +266,164 @@
 
 // console.log(add(2,2));
 
-spread and rest operator
+// spread and rest operator
+
+// spread operator is used to copy arrays, objects. it is used to spread the values of arrays and objects.
+
+// let array1: number[] = [1,2,3];
+// let array2: number[] = [4,5,6];
+
+// let combinedArray: number[] = [...array1, ...array2];
+
+// let customArray = [20, ...array1];
+// console.log(customArray);
+
+// console.log(combinedArray);
+
+// let user={
+//     userName:"Fatima",
+//     age:21
+// }
+
+// let newUser={...user, address:"Madina"}
+ 
+
+// console.log(newUser);
+
+// rest operator
+// rest operator is used to convert the arguments of function into array
+
+// function add(...num){
+//     return num.reduce((total, cv)=> total + cv, 0)
+// }
+// console.log(add(1,2,3));
+
+// function
+
+// simple function
+
+// function greet(user:string){
+//     console.log("Hi",user);
+// }
+
+// greet("Fatima");
+
+// function add(a:number, b:number):number{
+//        return a+b;
+// }
+
+// console.log(add(2,2));
+
+// call signatures with type and interface
+
+// type Multiply = (x:number, y:number) => number;
+
+// const myMultiply: Multiply =(a, b)=> a*b;
+
+// console.log(myMultiply(2,10));
+
+// interface Multiply = (x:number, y:number) => number;
+
+// const myMultiply: Multiply =(a, b)=> a*b;
+
+// console.log(myMultiply(2,10));
+
+// function overloading
+// means when we use more than one data type in a fuction
+
+// function search(value:any):string{
+//        if (typeof value === "number"){
+//               return `the input is Number ${value}`;
+//        }else{
+//               return `the input is String ${value}`;
+//        }
+// }
+
+// console.log(search("Fatima"));
+
+// arrow function
+
+// const add = (a:number, b:number):number => a+b;
+// console.log(add(1,5));
+
+// objects in typescript
+// let user:{
+//        userName: string,
+//        age: number
+// }
+
+// user = {
+//        userName: "Fatima",
+//        age:21
+// }
+
+// console.log(user);
+
+// optional parameters
+
+// let user:{
+//        userName: string,
+//        age?: number
+// }
+
+// user = {
+//        userName:"Fatima"
+// }
+
+// console.log(user);
+
+// readonly property
+// let user:{
+//        readonly userName: string,
+//        age?: number
+// }
+
+// user = {
+//        userName:"Fatima",
+//        age:21
+// }
+
+// user.userName = "abc";
+// console.log(user);
+
+// interface in typescript
+// interface is the blue print or structure of the objects
+
+// interface User{
+//        readonly id:number,
+//        userName:string;
+//        age:number,
+//        address?:string
+// }
+
+// let emp1:User ={
+//        id:101,
+//        userName:"Fatima",
+//        address:"Madina",
+//        age:21,
+// }
+
+// let emp2:User = {
+//        id:102,
+//        userName:"Zainab",
+//        address:"Makkah",
+//        age:22
+// }
+
+// console.log(emp1);
+// console.log(emp2);
+
+// interface in function
+// interface MultiplyFunction {(a:number, b:number):number}
+// function myFunction(x,y){
+//        return x*y;
+// }
+
+// console.log(myFunction(2,5));
+
+// function myAdd(x,y){
+//        return x+y;
+// }
+
+// console.log(myAdd(2,20));
+
