@@ -191,24 +191,257 @@ RETURNING HTML PAGES IN RESPONSE
 ===============================================
 */
 
-const http = require('http');
-const fs = require('fs');
+// const http = require('http');
+// const fs = require('fs');
 
-const server = http.createServer((req, res) => {
-    res.setHeader("Content-Type","text/html");
-//    firstly read
-    fs.readFile('./html_pages/index.html', (err, data)=>{
-        if(err){
-            console.log(err);
-            res.end();
-        }else{
-            // res.write(data);
-            // if there is only single file then we can pass data to res.end() method
-            res.end(data);
-        }
-    })
-});
+// const server = http.createServer((req, res) => {
+//     res.setHeader("Content-Type","text/html");
+// //    firstly read
+//     fs.readFile('./html_pages/index.html', (err, data)=>{
+//         if(err){
+//             console.log(err);
+//             res.end();
+//         }else{
+//             // res.write(data);
+//             // if there is only single file then we can pass data to res.end() method
+//             res.end(data);
+//         }
+//     })
+// });
 
-server.listen(3000, 'localhost', () => {
-    console.log("Server is running on port 3000!");
-})
+// server.listen(3000, 'localhost', () => {
+//     console.log("Server is running on port 3000!");
+// })
+
+/*
+===============================================
+ROUTING
+===============================================
+*/
+
+// const http = require('http');
+// const fs = require('fs');
+
+// const server = http.createServer((req, res) => {
+//     res.setHeader("Content-Type","text/html");
+
+//     let path = './html_pages/';
+
+//     switch(req.url){
+//         case '/':
+//             path += 'index.html';
+//          break;
+//          case '/about':
+//             path += 'about.html';
+//          break;   
+//          case '/services':
+//             path += 'services.html';
+//          break;   
+//          case '/blog':
+//             path += 'blog.html';
+//          break;
+//          default:
+//             path += '404.html';
+//          break;          
+//     } 
+
+//     fs.readFile(path, (err, data)=>{
+//         if(err){
+//             console.log(err);
+//             res.end();
+//         }else{
+//             // res.write(data);
+//             // if there is only single file then we can pass data to res.end() method
+//             res.end(data);
+//         }
+//     })
+// });
+
+// server.listen(3000, 'localhost', () => {
+//     console.log("Server is running on port 3000!");
+// })
+
+/*
+===============================================
+STATUS CODES
+===============================================
+*/
+// 100 range informational response
+// 200 range success
+// 300 range redirect
+// 400 range user or client error
+// 500 range server error
+
+// const server = http.createServer((req, res) => {
+//     res.setHeader("Content-Type","text/html");
+
+//     let path = './html_pages/';
+
+//     switch(req.url){
+//         case '/':
+//             path += 'index.html';
+//             res.statusCode =200;
+//          break;
+//          case '/about':
+//             path += 'about.html';
+//             res.statusCode = 200;
+//          break;   
+//          case '/services':
+//             path += 'services.html';
+//             res.statusCode = 200;
+//          break;   
+//          case '/blog':
+//             path += 'blog.html';
+//             res.statusCode = 200;
+//          break;
+//          default:
+//             path += '404.html';
+//             res.statusCode = 400;
+//          break;          
+//     } 
+
+//     fs.readFile(path, (err, data)=>{
+//         if(err){
+//             console.log(err);
+//             res.end();
+//         }else{
+//             // res.write(data);
+//             // if there is only single file then we can pass data to res.end() method
+//             res.end(data);
+//         }
+//     })
+// });
+
+// server.listen(3000, 'localhost', () => {
+//     console.log("Server is running on port 3000!");
+// })
+
+/*
+===============================================
+REDIRECTS
+===============================================
+*/
+
+// const server = http.createServer((req, res) => {
+//     res.setHeader("Content-Type","text/html");
+
+//     let path = './html_pages/';
+
+//     switch(req.url){
+//         case '/':
+//             path += 'index.html';
+//             res.statusCode =200;
+//          break;
+//          case '/about':
+//             path += 'about.html';
+//             res.statusCode = 200;
+//          break; 
+//         //  now here services page is no longer exist so we want to redirect to about  
+//          case '/services':
+//             path += 'services.html';
+//             res.statusCode = 200;
+//             // add these lines
+//             res.setHeader('Location', '/about');
+//             res.end();
+//          break;   
+//          case '/blog':
+//             path += 'blog.html';
+//             res.statusCode = 200;
+//          break;
+//          default:
+//             path += '404.html';
+//             res.statusCode = 400;
+//          break;          
+//     } 
+
+//     fs.readFile(path, (err, data)=>{
+//         if(err){
+//             console.log(err);
+//             res.end();
+//         }else{
+//             // res.write(data);
+//             // if there is only single file then we can pass data to res.end() method
+//             res.end(data);
+//         }
+//     })
+// });
+
+// server.listen(3000, 'localhost', () => {
+//     console.log("Server is running on port 3000!");
+// })
+
+/*
+===============================================
+EXPRESS JS
+===============================================
+*/
+
+// we will install two packages
+// nodemon for live reload npm i nodemon
+// lodash for some functions npm i lodash
+
+// after installation we will import lodash
+// const _ = require('lodash');
+
+// now using lodash
+// const num = _.random(0, 16);
+// console.log(num);
+
+// now install express
+// npm i express
+// now import
+
+const express = require('express');
+
+// Creating server and run server in express
+// Create server by just making an instance
+const app = express();
+
+// run server
+app.listen(3000);
+
+// now send html response to browser
+
+// app.get('/', (req, res)=>{
+//     // res.send('<h2>this is response from server in html</h2>');
+//     // we can do this thing in easy way
+//     res.sendFile('./html_pages/index.html', {root: __dirname})
+// })
+
+// Routing html pages
+// app.get('/services', (req, res)=>{
+//     // res.send('<h2>this is response from server in html</h2>');
+//     res.sendFile('./html_pages/services.html', {root: __dirname})
+// })
+
+// app.get('/blog', (req, res)=>{
+//     // res.send('<h2>this is response from server in html</h2>');
+//     res.sendFile('./html_pages/blog.html', {root: __dirname})
+// })
+// app.get('/about', (req, res)=>{
+//     // res.send('<h2>this is response from server in html</h2>');
+//     res.sendFile('./html_pages/about.html', {root: __dirname})
+// })
+// app.get('/404', (req, res)=>{
+//     // res.send('<h2>this is response from server in html</h2>');
+//     res.sendFile('./html_pages/404.html', {root: __dirname})
+// })
+
+/*
+===============================================
+Redirect and 404 page
+===============================================
+*/
+// redirect
+// app.get('/about', (req, res)=>{
+//     res.redirect('/blog');
+// })
+
+// 404 page
+// this page should be at bottom
+
+// app.use((req, res)=>{
+//     res.status(404).sendFile('./html_pages/404.html', {root:__dirname});
+// })
+
+
